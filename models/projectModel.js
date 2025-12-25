@@ -42,7 +42,13 @@ const projectSchema = new mongoose.Schema({
     image: {
         type: String,
         default: "https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png"
-    }
+    },
+    members: [
+        {
+            email: { type: String, required: true },
+            role: { type: String, enum: ['Leader', 'Team Member'], required: true }
+        }
+    ]
 }, {
     timestamps: true
 });

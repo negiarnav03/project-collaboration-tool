@@ -8,6 +8,10 @@ import Navbar from './components/header/Navbar';
 import Body from './components/body/Body';
 import axios from 'axios';
 
+axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.withCredentials = true; // ensures cookies (refresh token) work
+
+
 function App() {
   const dispatch = useDispatch();
   const token = useSelector(state => state.token);
@@ -17,7 +21,7 @@ function App() {
     const firstLogin = localStorage.getItem('firstLogin');
     if (firstLogin) {
       const getToken = async () => {
-        const res = await axios.post('/user/refresh_token', null);
+        const res = await axios.post('http://localhost:5000/user/refresh_token', null);
         dispatch({
           type: 'GET_TOKEN',
           payload: res.data.access_token

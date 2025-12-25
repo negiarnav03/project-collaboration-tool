@@ -64,8 +64,8 @@ function Register() {
             setUser({ ...user, err: '', success: res.data.msg });
 
         } catch (err) {
-            err.response.data.msg &&
-                setUser({ ...user, err: err.response.data.msg, success: '' });
+            const errorMsg = err.response?.data?.msg || "Something went wrong. Please try again later.";
+            setUser({ ...user, err: errorMsg, success: '' });
         }
     }
 

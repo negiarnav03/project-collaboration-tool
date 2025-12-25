@@ -5,13 +5,12 @@ const authAdmin = require('../middleware/authAdmin');
 
 // routes for various request
 router.post('/register', userCtrl.register);
-router.post('/activate', userCtrl.activateEmail);
 router.post('/login', userCtrl.login);
 router.post('/refresh_token', userCtrl.getAccessToken);
 router.post('/forgotpassword', userCtrl.forgotPassword);
 router.post('/resetpassword', auth, userCtrl.resetPassword);
 router.get('/logout', userCtrl.logout);
-router.post('/googlelogin', userCtrl.googleLogin);
+//router.post('/googlelogin', userCtrl.googleLogin);
 router.get('/getUser/:email', userCtrl.getUser);
 
 // router.patch('/updaterights/:id', auth, authAdmin, userCtrl.updateUsersRole);

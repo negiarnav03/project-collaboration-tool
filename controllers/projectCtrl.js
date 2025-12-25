@@ -161,6 +161,25 @@ const projectCtrl = {
         } catch (err) {
             return res.status(500).json({ msg: err.message });
         }
+    },
+
+    // add member
+    addMember: async (req, res) => {
+        try {
+            const projectId = req.params.id;
+            const { email, role } = req.body;
+            if (!email || !role) return res.status(400).json({ msg: 'Provide member email and role.' });
+            const project = await Projects.findById(projectId);
+            if (!project) return res.status(404).json({ msg: 'Project not found.' });
+            // Do not add duplicate emails (optionally, allow different role updates)
+            const alreadyMember = project.members.find(m => m.email.toLowerCase() === email.toLowerCase());
+            if (alreadyMember) return res.status(400).json({ msg: 'Member already added.' });
+            project.members.push({ email, role });
+            await project.save();
+            res.json({ msg: 'Member added successfully!', members: project.members });
+        } catch (err) {
+            return res.status(500).json({ msg: err.message });
+        }
     }
 }
 

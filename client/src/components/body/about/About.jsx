@@ -8,12 +8,14 @@ const About = () => {
       <div className="about-main-container">
         <div className="about-main  m-3 p-5">
           <div className="about-heading p-2">
-            <h2>Video Tutorial to understand workflow of website</h2>
+            <h2>About This Website</h2>
           </div>
 
           <div className="about-container p-3 m-3">
-            <div className="video-tutorial p-2">
-              <video src="" controls></video>
+            <div className="about-description p-2">
+              <p>
+                This Project Collaboration Tool is designed to streamline teamwork, allowing users to easily join, manage, and contribute to collaborative projects. With features such as secure authentication, personalized profiles, and intuitive project management, the platform encourages effective communication and enhanced productivity among team members. The website supports role-based functionality for various participants and provides a centralized space for sharing updates, tracking progress, and achieving project goals together efficiently.
+              </p>
             </div>
           </div>
 
@@ -21,9 +23,10 @@ const About = () => {
             <h2 className="mb-5 ps-3">DEVELOPERs</h2>
 
             <div className="dev-name p-3">
-              <h4 className="names">19CE112 <br /> Preyash Pipariya</h4>
-              <h4 className="names">19CE113 <br /> Jaimin Prajapati</h4>
-              <h4 className="names">19CE114 <br /> Mohit Prajapati</h4>
+              <h4 className="names">2210990163 <br /> Arnav Negi</h4>
+              <h4 className="names">2210990149 <br /> Arayana Singh</h4>
+              <h4 className="names">2210990164 <br /> Arpit Garg</h4>
+              <h4 className="names">2210990122 <br /> Anmol Grover</h4>
             </div>
           </div>
         </div>

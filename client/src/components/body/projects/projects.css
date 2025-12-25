@@ -1,114 +1,137 @@
-.projects-main-container{
-    background: #ffffff;
-    /* background-image: linear-gradient(to top, #fdf9ee 0%, #accbee 100%); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+.projects-main-container {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(120deg, #e9f5ff 0%, #f7fafd 100%);
+    min-height: 95vh;
+    padding-bottom: 2em;
 }
 
-.grd-project{
+div[class*="grd-project"] {
     display: grid;
-    grid-template-columns: repeat(3 , minmax(300px,3fr));
-    grid-template-rows: auto;
-    grid-gap: 3em;
-    
-}
-
-.grd-projects > div{
-    background-color: #fefefe;
-}
-
-.PCard:hover{
-    transform: scale(1.05);
-}
-
-.PCard{
-    box-shadow:0 10px 15px rgba(181,181,181,.7);
-    background:#fff;
-    padding: .5em;
-    border-radius:2% 2% 2% 2%;
-    transition: .4s;
-}
-
-.project-img{
-    width: 100%;
-    height: 12em;
-}
-
-.project-detail{
-    background:#ffffff;
-    border-radius:0 0 10% 10%;
-    padding: .8rem;
-    color:#000;
-}
-
-.flx-card-bottom{
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-    bottom: 0;
-    position: relative;
-    bottom: 0;
-    
-}
-
-.Card:hover{
-    transform: scale(1.05);
-    box-shadow:  -3px -3px 7px rgb(212, 209, 209), 3px 3px 7px #a3b1c6;
-}
-
-.button{
-    border: none;
-    background:#ffffff;
-    color:rgb(0, 0, 0);
-    border-radius:50px;
-    font-size:1rem;
-    height:40px;
-    box-shadow:inset 3px 3px 15px #b3b6b3;
-}
-
-.button-readmore{
-    width:130px;
-}
-
-.button-readmore:hover{
-    color: darkblue;
-    border: none;
-    box-shadow:  3px 3px 15px #b3b6b3;
-}
-
-.like-button{
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 2.8em;
+    justify-items: center;
+    padding: 2em 1.5em;
     background: none;
+}
+
+.PCard {
+    background: #fff;
+    border-radius: 1.5em;
+    box-shadow: 0 4px 32px #cce2ef36, 0 1.5px 8px #acd3f089;
+    padding: 1.2em 1.1em 1.5em 1.1em;
+    min-width: 300px;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow .2s, transform .18s;
+    margin-bottom: 1em;
+}
+.PCard:hover {
+    transform: translateY(-6px) scale(1.035);
+    box-shadow: 0 10px 40px #7bc7fd45, 0 2.5px 14px #85c4f059;
+}
+.project-img {
+    width: 100%;
+    max-height: 195px;
+    border-radius: 1em 1em 0 0;
+    object-fit: cover;
+    box-shadow: 0 2px 10px #b8bcfe1a;
+}
+.project-detail {
+    background: none;
+    border-radius: 0 0 1em 1em;
+    color: #243262;
+    padding: 0.6em 0 0.5em 0;
+    margin-bottom: 0.2em;
+}
+.project-detail > span > b {
+    font-size: 1.34em;
+    color: #196bb5;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+}
+.project-detail p {
+    color: #4b4e60;
+    font-size: 1.08em;
+    margin-bottom: 8px;
+}
+/* Member badge display */
+.project-detail ul {
+    margin: 0.15em 0 0.38em 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.project-detail li {
+    list-style: none;
+}
+.member-pill {
+    display: inline-block;
+    font-size: .98em;
+    padding: 4px 12px 4px 10px;
+    border-radius: 1em;
+    margin-right: 6px;
+    margin-bottom: 3px;
+    font-weight: 600;
+    background: #eaf6ff;
+    color: #1d3f76;
+    box-shadow: 0 0 5px #ccd9f820;
+    border: 1px solid #d2e9fa;
+}
+.member-pill.leader {
+    background: linear-gradient(135deg, #49e3d8 5%, #459cfb 100%);
+    color: #fff;
+    border: 1px solid #90c3fb;
+}
+.member-pill.team {
+    background: #eaf6ff;
+    border: 1px solid #d2e9fa;
+    color: #2177ad;
+}
+.request-button, .button {
     border: none;
+    border-radius: 2em;
+    font-size: 1em;
+    font-weight: 600;
+    box-shadow: 0 2px 8px #baffec14;
+    padding: 0.5em 1.5em;
+    margin: 0 0.2em 0.35em 0.2em;
+    background: linear-gradient(105deg, #23d88d 0%, #1fa2ff 100%);
+    color: #fff;
+    letter-spacing: 0.02em;
+    transition: background .14s, box-shadow .16s, color .12s;
+    cursor: pointer;
 }
-
-.like-button:focus .like-icon{
-    color: red;
+.request-button:hover, .button:hover {
+    background: linear-gradient(105deg, #1fa2ff 0%, #23d88d 100%);
+    color: #fff;
+    box-shadow: 0 6px 23px #1fa2ff23;
 }
-
-.like-icon{
-    border-radius: 50%;
-    color: rgb(158, 144, 144);
-    font-size: 1.1em;
-    box-shadow:inset 3px 3px 15px #6f746f;
-
+.button-readmore {
+    width: 135px;
+    margin-left: 1.1em;
+    background: linear-gradient(105deg,#36c3fa 0%, #614ed8 100%);
 }
-
-.like-icon:hover{
-    color: red;
-    box-shadow: 3px 3px 15px #6f746f;
+.button-readmore:hover {
+    background: linear-gradient(105deg, #614ed8 0%, #36c3fa 100%);
+    color: #fff;
 }
-
-
-@media(max-width:1200px){
-    .projects{
-        grid-template-columns: repeat(3, 1fr);
-        padding: 70px;
+.flx-card-bottom {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+@media (max-width: 1000px) {
+    div[class*="grd-project"] {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-
 }
-
-@media (max-width: 700px){
-    .projects{
-        grid-template-columns: repeat(1, 1fr);
-        padding: 70px;
+@media (max-width:700px) {
+    .projects-main-container {
+        padding: 0 .55em;
     }
- 
 }

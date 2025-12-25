@@ -71,9 +71,9 @@ function Login() {
             // } else {
             //     setUser({ ...user, err: 'Please verify captcha', success: '' });
             // }
-        } catch (err) {
-            err.response.data.msg &&
-                setUser({ ...user, err: err.response.data.msg, success: '' });
+        }catch (err) {
+            const errorMsg = err.response?.data?.msg || "Something went wrong. Please try again later.";
+            setUser({ ...user, err: errorMsg, success: '' });
         }
     }
 
@@ -87,8 +87,8 @@ function Login() {
             dispatch(dispatchLogin());
             history.push('/');
         } catch (err) {
-            err.response.data.msg &&
-                setUser({ ...user, err: err.response.data.msg, success: '' });
+            const errorMsg = err.response?.data?.msg || "Something went wrong. Please try again later.";
+            setUser({ ...user, err: errorMsg, success: '' });
         }
     }
 
